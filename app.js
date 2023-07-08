@@ -5,6 +5,7 @@ const app = express();
 require("dotenv").config()
 
 const authRoutes = require("./routes/auth");
+const postRoutes = require("./routes/post")
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ extended: true }));
@@ -20,6 +21,7 @@ app.use((req, res, next) => {
 });
 
 app.use(authRoutes);
+app.use(postRoutes)
 
 app.use((error, req, res, next) => {
   const status = error.statusCode || 500;

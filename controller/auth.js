@@ -138,7 +138,7 @@ exports.resetPassword = async (req, res) => {
     //throw err;
   }
   // Hash the new password before saving it (using bcrypt)
-  bcrypt.hash(newPassword, SALT_ROUNDS ,async (err, hash) => {
+  bcrypt.hash(newPassword, SALT_ROUNDS , async (err, hash) => {
     if (err) {
       return res.status(500).json({ error: 'Failed to reset password' });
     }

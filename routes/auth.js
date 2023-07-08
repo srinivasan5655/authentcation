@@ -5,6 +5,7 @@ const { body } = require("express-validator");
 const authController = require("../controller/auth");
 const User = require("../models/user");
 
+
 router.put(
   "/signup",
   // validating the inputs
@@ -74,5 +75,6 @@ router.post('/reset-password',
 ],
 authController.resetPassword
 );
+
 
 module.exports = router;
